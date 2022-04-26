@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "pm2 kill",
+    "start_": "pm2 start ecosystem.config.js",
+    "start:consumer": "pm2 serve ../consumer/dist 8080",
+    "start:mfe1": "pm2 serve ../mfe-1/dist 9000",
+    "start:mfe2": "pm2 serve ../mfe-2/dist 9080",
+    "start": "npm run start:mfe1 && npm run start:mfe2 && npm run start:consumer",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pm2": "^5.2.0"
+  }
+}
