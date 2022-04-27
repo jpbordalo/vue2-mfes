@@ -20,8 +20,8 @@ module.exports = defineConfig({
         name: "shell",
         filename: "shell.js",
         remotes: {
-          mfe1: "mfe1@http://localhost:8080/mfe-1/mfe1.js",
-          mfe2: "mfe2@http://localhost:8080/mfe-2/mfe2.js",
+          mfe1: "mfe1@http://localhost:9000/mfe1.js",
+          mfe2: "mfe2@http://localhost:9080/mfe2.js",
           // mfe1: "mfe1@../mfe-1/dist/mfe1.js",
         },
         // shared: require("./package.json").dependencies,

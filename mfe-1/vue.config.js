@@ -5,7 +5,7 @@ const ModuleFederationPlugin =
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "http://localhost:8080/mfe-1",
+  publicPath: "http://localhost:9000",
   configureWebpack: {
     resolve: {
       alias: {
@@ -21,6 +21,7 @@ module.exports = defineConfig({
         filename: "mfe1.js",
         exposes: {
           "./FakeComponentA": "./src/components/FakeComponentA",
+          "./Store": "./src/store/modules/counter.module.js",
         },
         shared: require("./package.json").dependencies,
       }),

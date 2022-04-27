@@ -5,7 +5,7 @@ const ModuleFederationPlugin =
 
 module.exports = defineConfig({
   transpileDependencies: ["vuetify"],
-  publicPath: "http://localhost:8080/mfe-2",
+  publicPath: "http://localhost:9080",
   configureWebpack: {
     resolve: {
       alias: {
