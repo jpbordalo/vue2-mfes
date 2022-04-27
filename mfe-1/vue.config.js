@@ -5,7 +5,7 @@ const ModuleFederationPlugin =
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "http://localhost:9000/",
+  publicPath: "http://localhost:8080/mfe-1",
   configureWebpack: {
     resolve: {
       alias: {
