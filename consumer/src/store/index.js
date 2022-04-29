@@ -1,10 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import counter from "mfe1/Store";
+// import counter from "mfe1/Store";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+// export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     step: 0,
   },
@@ -14,6 +15,10 @@ export default new Vuex.Store({
     },
   },
   modules: {
-    counter,
+    // counter,
   },
 });
+
+// store.registerModule("counter", counter);
+
+export default store;

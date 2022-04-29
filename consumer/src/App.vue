@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <FakeComponentA />
     <FakeComponentB />
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
@@ -18,6 +18,10 @@ export default {
     // FakeComponentA,
     FakeComponentA: () => import("mfe1/FakeComponentA"),
     FakeComponentB: () => import("mfe2/FakeComponentB"),
+  },
+
+  errorCaptured() {
+    console.log("errorCaptured ");
   },
 };
 </script>
