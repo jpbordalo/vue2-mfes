@@ -1,19 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SafeComponent>
+      <FakeComponentA />
+    </SafeComponent>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FakeComponentA from "./components/FakeComponentA.vue";
+import SafeComponent from "./components/SafeComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    FakeComponentA,
+    SafeComponent,
+  },
+
+  errorCaptured() {
+    console.log("errorCaptured mfe app");
+    return false;
+  },
+};
 </script>
 
 <style>

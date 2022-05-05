@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-// import counter from "mfe1/Store";
+import counter from "mfe1/Store";
 
 Vue.use(Vuex);
 
@@ -19,6 +19,6 @@ const store = new Vuex.Store({
   },
 });
 
-// store.registerModule("counter", counter);
+store.registerModule("counter", counter);
 
 export default store;

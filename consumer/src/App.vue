@@ -1,27 +1,27 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <FakeComponentA />
-    <FakeComponentB />
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
+    <SafeComponent>
+      <FakeComponentA />
+    </SafeComponent>
+    <SafeComponent>
+      <FakeComponentB />
+    </SafeComponent>
   </div>
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
-// import FakeComponentA from "mfe1/FakeComponentA";
+import SafeComponent from "./components/SafeComponent.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld,
-    // FakeComponentA,
     FakeComponentA: () => import("mfe1/FakeComponentA"),
     FakeComponentB: () => import("mfe2/FakeComponentB"),
+    SafeComponent,
   },
 
   errorCaptured() {
-    console.log("errorCaptured ");
+    console.log("errorCaptured SHELL App");
   },
 };
 </script>
