@@ -1,6 +1,9 @@
 <template>
   <div @click="increment">
-    <div class="fake-component-a">Fake Component A: {{ counter }}</div>
+    <div class="fake-component-a">
+      Fake Component A: {{ counter }} | {{ classes.AClass.METADATA.type }} |
+      {{ aclass.name }}
+    </div>
   </div>
 </template>
 
@@ -8,19 +11,31 @@
 export default {
   name: "FakeComponentA",
 
+  props: {
+    classes: {
+      type: Object,
+      default: () => {},
+    },
+
+    services: {
+      type: Object,
+      default: () => {},
+    },
+  },
+
   data() {
     return {
-      a: "",
-      b: undefined,
+      aclass: undefined,
     };
   },
 
   mounted() {
-    console.log("mounted");
+    console.log("mounted FCA - classes", this.classes);
+    this.aclass = new this.classes.AClass();
+    this.aclass.setName("I can use classes from other modules");
 
-    // setTimeout(() => {
-    // this.a = this.b.error;
-    // }, 5000);
+    console.log("Service Register - mounted FCA", this.services);
+    this.services.WORKFLOW.actions[0][0].callback();
   },
 
   errorCaptured() {

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import counter from "mfe1/Store";
+import serviceRegister from "./modules/serviceRegister/serviceRegister.module";
 
 Vue.use(Vuex);
 
@@ -20,5 +21,6 @@ const store = new Vuex.Store({
 });
 
 store.registerModule("counter", counter);
+store.registerModule("serviceRegister", serviceRegister);
 
 export default store;

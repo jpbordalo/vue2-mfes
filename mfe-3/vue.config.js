@@ -5,7 +5,7 @@ const ModuleFederationPlugin =
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "http://localhost:8080/",
+  publicPath: "http://localhost:9090",
   configureWebpack: {
     resolve: {
       alias: {
@@ -17,19 +17,18 @@ module.exports = defineConfig({
     },
     plugins: [
       new ModuleFederationPlugin({
-        name: "shell",
-        filename: "shell.js",
-        remotes: {
-          mfe1: "mfe1@http://localhost:9000/mfe1.js",
-          mfe2: "mfe2@http://localhost:9080/mfe2.js",
-          mfe3: "mfe3@http://localhost:9090/mfe3.js",
-          // mfe1: "mfe1@../mfe-1/dist/mfe1.js",
+        name: "mfe3",
+        filename: "mfe3.js",
+        exposes: {
+          "./FakeComponentC": "./src/components/FakeComponentC",
+          "./AClass": "./src/models/AClass.js",
+          "./config": "./src/models/Workflow.map.js",
         },
-        // shared: require("./package.json").dependencies,
+        shared: require("./package.json").dependencies,
       }),
     ],
   },
   devServer: {
-    port: 8080,
+    port: 9090,
   },
 });

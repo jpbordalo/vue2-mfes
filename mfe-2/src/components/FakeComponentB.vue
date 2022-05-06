@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="fake-component-b">Fake Component B</div>
+  <div class="fake-component-b">
+    <div>Fake Component B</div>
 
     <v-form>
       <v-container>
@@ -37,5 +37,6 @@ export default {
 <style scoped>
 .fake-component-b {
   color: red;
+  border: 1px solid black;
 }
 </style>
