@@ -1,27 +1,49 @@
 <template>
   <div id="app">
     <SafeComponent>
-      <FakeComponentA />
+      <FakeComponentA :classes="classes" :services="services" />
     </SafeComponent>
     <SafeComponent>
       <FakeComponentB />
+    </SafeComponent>
+    <SafeComponent>
+      <FakeComponentC />
     </SafeComponent>
   </div>
 </template>
 
 <script>
 import SafeComponent from "./components/SafeComponent.vue";
+import AClass from "mfe3/AClass";
+
+const classes = {
+  AClass,
+};
 
 export default {
   name: "App",
+
+  data() {
+    return {
+      classes,
+    };
+  },
+
   components: {
     FakeComponentA: () => import("mfe1/FakeComponentA"),
     FakeComponentB: () => import("mfe2/FakeComponentB"),
+    FakeComponentC: () => import("mfe3/FakeComponentC"),
     SafeComponent,
   },
 
   errorCaptured() {
     console.log("errorCaptured SHELL App");
+  },
+
+  computed: {
+    services() {
+      return this.$store.state.serviceRegister.services;
+    },
   },
 };
 </script>
