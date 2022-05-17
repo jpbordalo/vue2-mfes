@@ -2,7 +2,7 @@
   <div @click="increment">
     <div class="fake-component-a">
       Fake Component A: {{ counter }} | {{ classes.AClass.METADATA.type }} |
-      {{ aclass.name }}
+      {{ aclass ? aclass.name : "-" }}
     </div>
   </div>
 </template>
@@ -58,6 +58,6 @@ export default {
 
 <style scoped>
 .fake-component-a {
-  color: red;
+  color: lawngreen;
 }
 </style>

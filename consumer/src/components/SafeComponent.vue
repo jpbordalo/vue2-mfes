@@ -1,7 +1,7 @@
 <template>
   <div>
-    <slot />
-    <div v-if="hasError">Error occur SHELL!</div>
+    <slot v-if="!hasError" />
+    <div v-else>Error occur SHELL!</div>
   </div>
 </template>
 

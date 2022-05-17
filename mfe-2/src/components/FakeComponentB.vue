@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
 .fake-component-b {
-  color: red;
+  color: lawngreen;
   border: 1px solid black;
 }
 </style>

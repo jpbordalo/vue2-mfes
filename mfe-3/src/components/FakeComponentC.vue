@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="fake-component-a">Fake Component C: {{ aclass.name }}</div>
+    <div class="fake-component-c">
+      Fake Component C: {{ aclass ? aclass.name : "-" }}
+    </div>
   </div>
 </template>
 
@@ -29,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-.fake-component-a {
-  color: red;
+.fake-component-c {
+  color: lawngreen;
 }
 </style>
