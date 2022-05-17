@@ -23,6 +23,8 @@ module.exports = defineConfig({
           "./FakeComponentC": "./src/components/FakeComponentC",
           "./AClass": "./src/models/AClass.js",
           "./config": "./src/models/Workflow.map.js",
+          "./routes": "./src/routes.js",
+          "./RouteComponent": "./src/components/RouteComponent",
         },
         shared: require("./package.json").dependencies,
       }),

@@ -1,50 +1,18 @@
 <template>
   <div id="app">
-    <SafeComponent>
-      <FakeComponentA :classes="classes" :services="services" />
-    </SafeComponent>
-    <SafeComponent>
-      <FakeComponentB />
-    </SafeComponent>
-    <SafeComponent>
-      <FakeComponentC />
-    </SafeComponent>
+    <div class="nav">
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/about">Go to About</router-link>
+    </div>
+    <div class="body">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import SafeComponent from "./components/SafeComponent.vue";
-import AClass from "mfe3/AClass";
-
-const classes = {
-  AClass,
-};
-
 export default {
   name: "App",
-
-  data() {
-    return {
-      classes,
-    };
-  },
-
-  components: {
-    FakeComponentA: () => import("mfe1/FakeComponentA"),
-    FakeComponentB: () => import("mfe2/FakeComponentB"),
-    FakeComponentC: () => import("mfe3/FakeComponentC"),
-    SafeComponent,
-  },
-
-  errorCaptured() {
-    console.log("errorCaptured SHELL App");
-  },
-
-  computed: {
-    services() {
-      return this.$store.state.serviceRegister.services;
-    },
-  },
 };
 </script>
 
@@ -55,13 +23,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
 
 <style scoped>
-.fake-component-a {
-  color: yellow;
-  background: green;
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  background: lightblue;
+}
+
+.body {
+  background: lightseagreen;
 }
 </style>
